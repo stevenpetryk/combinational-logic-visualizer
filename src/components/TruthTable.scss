@@ -1,0 +1,32 @@
+.truth-table {
+  display: flex;
+
+  > div {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    &:first-child {
+      margin-right: 20px;
+    }
+
+    > p {
+      margin: 5px 0;
+      text-align: center;
+      color: #555;
+    }
+  }
+
+  .truth-table-data {
+    flex-basis: 1;
+    height: 100%;
+  }
+
+  .truth-table-inputs {
+    flex-basis: 2;
+  }
+
+  .truth-table-outputs {
+    flex-basis: 1;
+  }
+}

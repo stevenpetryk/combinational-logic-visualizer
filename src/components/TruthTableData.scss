@@ -1,0 +1,22 @@
+.truth-table-data {
+  background: #f0f0f0;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+
+  .truth-table-row {
+    flex: 1;
+    max-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .truth-table-bit {
+    flex: 1;
+    text-align: center;
+    font-weight: 500;
+  }
+}

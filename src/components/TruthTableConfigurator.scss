@@ -1,0 +1,27 @@
+.truth-table-configurator {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+
+  .truth-table {
+    flex-grow: 1;
+  }
+
+  .truth-table, .button {
+    margin-bottom: 20px;
+  }
+
+  footer {
+    text-align: center;
+    font-weight: 400;
+
+    p {
+      margin: 0;
+    }
+
+    &, a {
+      color: #aaa;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.button {
+  background: #4B9CFB;
+  padding: 16px 0;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  text-decoration: none;
+  outline: 0;
+  border: 5px solid transparent;
+  transition: all 100ms ease;
+
+  &:focus {
+    transform: translate(1.1);
+    border-color: #1d5290;
+  }
+
+  &:active {
+    background: #2B7CDB;
+  }
+}

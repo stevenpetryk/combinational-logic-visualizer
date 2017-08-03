@@ -5,13 +5,18 @@ import { Provider } from 'react-redux'
 import configureStore from './configureStore'
 const store = configureStore()
 
-import RootContainer from './RootContainer'
+import 'normalize.css'
+import './App.scss'
+
+import TruthTableConfigurator from './components/TruthTableConfigurator'
 
 class App extends React.Component {
   render () {
     return (
       <Provider store={store}>
-        <RootContainer />
+        <main>
+          <TruthTableConfigurator />
+        </main>
       </Provider>
     )
   }

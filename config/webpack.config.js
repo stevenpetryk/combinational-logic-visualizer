@@ -18,16 +18,18 @@ module.exports = {
         test: /\.(scss|sass)$/,
         exclude: /node_modules/,
         use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.(css)$/,
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
   output: {
-    filename: 'bundle.js',
+    filename: 'bundle.[hash].js',
     path: path.resolve(__dirname, '..', 'dist')
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Combinational Logic Visualizer'
-    })
+    new HtmlWebpackPlugin({ template: 'src/200.ejs' })
   ]
 }
