@@ -9,6 +9,8 @@ export default (
 ) => {
   switch (action.type) {
     case 'ADD_OUTPUT':
+      if (state.outputNames.length >= 4) return state
+
       return update(
         state,
         {
@@ -18,6 +20,8 @@ export default (
       )
 
     case 'REMOVE_OUTPUT':
+      if (state.outputNames.length <= 1) return state
+
       return update(
         state,
         {
