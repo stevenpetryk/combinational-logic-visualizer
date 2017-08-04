@@ -6,7 +6,11 @@ module.exports = {
     contentBase: './dist'
   },
   devtool: 'inline-source-map',
-  entry: './src/app.js',
+  entry: [
+    require.resolve('react-dev-utils/webpackHotDevClient'),
+    require.resolve('react-error-overlay'),
+    './src/app.js'
+  ],
   module: {
     rules: [
       {
