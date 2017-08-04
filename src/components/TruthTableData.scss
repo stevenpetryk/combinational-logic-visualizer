@@ -21,10 +21,12 @@
   }
 
   &.truth-table-outputs .truth-table-bit {
+    cursor: pointer;
     user-select: none;
+    position: relative;
   }
 
-  header .truth-table-bit {
+  .truth-table-header input.truth-table-bit {
     font-weight: 500;
     -webkit-appearance: none;
     width: 0px;
@@ -33,10 +35,14 @@
     border: 1px solid transparent;
     transition: all 0.3s ease;
     border-radius: 3px;
+    cursor: text;
 
-    &:hover {
-      border-color: #ccc;
+    &:after {
+      display: none;
     }
 
+    &:hover {
+      border-color: #eee;
+    }
   }
 }
