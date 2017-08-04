@@ -33,6 +33,7 @@
     "react-redux": "^5.0.5",
     "redux": "^3.7.2",
     "sass-loader": "^6.0.6",
+    "store": "^2.0.12",
     "style-loader": "^0.18.2",
     "webpack": "^3.4.1",
     "webpack-dev-server": "^2.6.1"
