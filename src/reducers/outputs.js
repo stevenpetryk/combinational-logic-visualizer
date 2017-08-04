@@ -2,8 +2,8 @@ import update from 'immutability-helper'
 
 export default (
   state = {
-    outputNames: ['X', 'Y'],
-    outputValues: [newOutput(), newOutput()]
+    outputNames: ['O1', 'O2'],
+    outputValues: [emptyArray(16), emptyArray(16)]
   },
   action
 ) => {
@@ -12,8 +12,8 @@ export default (
       return update(
         state,
         {
-          outputNames: { $push: ['Z'] },
-          outputValues: { $push: [newOutput()] }
+          outputNames: { $push: ['O' + (state.outputNames.length + 1)] },
+          outputValues: { $push: [emptyArray(16)] }
         }
       )
 
@@ -23,6 +23,14 @@ export default (
         {
           outputNames: { $splice: [[-1, 1]] },
           outputValues: { $splice: [[-1, 1]] }
+        }
+      )
+
+    case 'RENAME_OUTPUT':
+      return update(
+        state,
+        {
+          outputNames: { [action.payload.outputId]: { $set: action.payload.newName.toUpperCase() } }
         }
       )
 
@@ -36,6 +44,16 @@ export default (
                 $apply: (value) => (value || 0) ^ 1
               }
             }
+          }
+        }
+      )
+
+    case 'RESET':
+      return update(
+        state,
+        {
+          outputValues: {
+            $set: zeroedOutputs(state.outputNames.length)
           }
         }
       )
@@ -54,12 +72,18 @@ export default (
   return state
 }
 
-function randomOutputs (numOutputs) {
-  return Array.apply(null, Array(numOutputs)).map(() => {
-    return newOutput().map(() => Math.floor(Math.random() * 2))
-  })
+function zeroedOutputs (numOutputs) {
+  return emptyArray(numOutputs).map(() => (
+    emptyArray(16).map(() => 0)
+  ))
 }
 
-function newOutput () {
-  return Array.apply(null, Array(32)).map(() => {})
+function randomOutputs (numOutputs) {
+  return emptyArray(numOutputs).map(() => (
+    emptyArray(16).map(() => Math.floor(Math.random() * 2))
+  ))
+}
+
+function emptyArray (size) {
+  return Array.apply(null, Array(size)).map(() => 0)
 }

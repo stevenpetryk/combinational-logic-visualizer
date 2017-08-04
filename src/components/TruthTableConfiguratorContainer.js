@@ -8,6 +8,10 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return {
+    onReset () {
+      dispatch({ type: 'RESET' })
+    },
+
     onRandomize () {
       dispatch({ type: 'RANDOMIZE' })
     }

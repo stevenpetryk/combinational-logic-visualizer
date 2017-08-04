@@ -17,14 +17,26 @@
     flex: 1;
     text-align: center;
     font-weight: 400;
+    font-family: "Source Code Pro";
   }
 
   &.truth-table-outputs .truth-table-bit {
-    cursor: pointer;
     user-select: none;
   }
 
   header .truth-table-bit {
     font-weight: 500;
+    -webkit-appearance: none;
+    width: 0px;
+    background: none;
+    outline: 0;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+
+    &:hover {
+      border-color: #ccc;
+    }
+
   }
 }

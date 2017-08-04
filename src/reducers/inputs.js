@@ -2,7 +2,7 @@ import update from 'immutability-helper'
 
 export default (
   state = {
-    inputNames: ['A', 'B', 'C'],
+    inputNames: ['I1', 'I2', 'I3']
   },
   action
 ) => {
@@ -13,7 +13,7 @@ export default (
       return update(
         state,
         {
-          inputNames: { $push: [['D']] }
+          inputNames: { $push: ['I' + (state.inputNames.length + 1)] }
         }
       )
 
@@ -24,6 +24,14 @@ export default (
         state,
         {
           inputNames: { $splice: [[-1, 1]] }
+        }
+      )
+
+    case 'RENAME_INPUT':
+      return update(
+        state,
+        {
+          inputNames: { [action.payload.inputId]: { $set: action.payload.newName.toUpperCase() } }
         }
       )
   }

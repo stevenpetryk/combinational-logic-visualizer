@@ -1,6 +1,6 @@
 .button {
   background: #4B9CFB;
-  padding: 16px 0;
+  padding: 10px 0;
   border-radius: 5px;
   text-align: center;
   color: white;
@@ -10,13 +10,22 @@
   outline: 0;
   border: 5px solid transparent;
   transition: all 100ms ease;
+  background: #777;
+
+  &.primary {
+    background: #4B9CFB;
+
+    &:active {
+      background: #2B7CDB;
+    }
+  }
 
   &:focus {
     transform: translate(1.1);
-    border-color: #1d5290;
+    border-color: rgba(0, 0, 0, 0.4);
   }
 
   &:active {
-    background: #2B7CDB;
+    background: #555;
   }
 }

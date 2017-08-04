@@ -16,6 +16,10 @@ function mapDispatchToProps (dispatch) {
 
     onRemove () {
       dispatch({ type: 'REMOVE_INPUT' })
+    },
+
+    onRename (inputId, newName) {
+      dispatch({ type: 'RENAME_INPUT', payload: { inputId, newName } })
     }
   }
 }
