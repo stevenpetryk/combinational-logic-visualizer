@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Button from './Button.scss'
+import './Button.scss'
 
 export default ({ children, className, ...props }) => (
   <a

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import TruthTableHeader from './TruthTableHeader.scss'
+import './TruthTableHeader.scss'
 import SizeAdjuster from './SizeAdjuster'
 
 export default ({
@@ -20,7 +20,7 @@ export default ({
             className='truth-table-bit'
             key={index}
             value={name}
-            ref={(ref) => input = ref}
+            ref={(ref) => { input = ref }}
             onFocus={() => input.select()}
             onChange={(event) => onRename(index, event.target.value)}
             maxLength={2}

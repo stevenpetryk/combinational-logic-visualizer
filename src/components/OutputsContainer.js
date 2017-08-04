@@ -4,17 +4,8 @@ import TruthTableOutputs from './TruthTableOutputs'
 
 function mapStateToProps (state) {
   return {
-    numInputs: state.inputs.inputNames.length,
-    outputValues: state.outputs.outputValues
+    numInputs: state.inputs.inputNames.length
   }
 }
 
-function mapDispatchToProps (dispatch) {
-  return {
-    onFlip (outputColumn, outputRow) {
-      dispatch({ type: 'FLIP_BIT', payload: { outputColumn, outputRow } })
-    }
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(TruthTableOutputs)
+export default connect(mapStateToProps)(TruthTableOutputs)

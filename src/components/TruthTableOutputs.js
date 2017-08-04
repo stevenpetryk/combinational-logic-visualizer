@@ -7,9 +7,7 @@ import OutputRowContainer from './OutputRowContainer'
 import './TruthTableInputs.scss'
 
 export default ({
-  numInputs,
-  outputValues,
-  onFlip
+  numInputs
 }) => (
   <div className='truth-table-data truth-table-outputs'>
     <OutputHeaderContainer />

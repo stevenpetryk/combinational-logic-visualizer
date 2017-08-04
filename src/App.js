@@ -3,15 +3,15 @@ import { render } from 'react-dom'
 
 import { Provider } from 'react-redux'
 import configureStore from './configureStore'
-const store = configureStore()
 
 import 'normalize.css'
 import './App.scss'
 import './components/solutions/Solutions.scss'
 
 import TruthTableConfiguratorContainer from './components/TruthTableConfiguratorContainer'
-
 import ProductSumsContainer from './components/solutions/ProductSumsContainer'
+
+const store = configureStore()
 
 class App extends React.Component {
   render () {
