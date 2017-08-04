@@ -32,6 +32,7 @@
     "react-measure": "^2.0.2",
     "react-redux": "^5.0.5",
     "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
     "sass-loader": "^6.0.6",
     "store": "^2.0.12",
     "style-loader": "^0.18.2",

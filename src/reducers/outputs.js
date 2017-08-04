@@ -39,9 +39,25 @@ export default (
           }
         }
       )
+
+    case 'RANDOMIZE':
+      return update(
+        state,
+        {
+          outputValues: {
+            $set: randomOutputs(state.outputNames.length)
+          }
+        }
+      )
   }
 
   return state
+}
+
+function randomOutputs (numOutputs) {
+  return Array.apply(null, Array(numOutputs)).map(() => {
+    return newOutput().map(() => Math.floor(Math.random() * 2))
+  })
 }
 
 function newOutput () {

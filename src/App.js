@@ -8,14 +8,14 @@ const store = configureStore()
 import 'normalize.css'
 import './App.scss'
 
-import TruthTableConfigurator from './components/TruthTableConfigurator'
+import TruthTableConfiguratorContainer from './components/TruthTableConfiguratorContainer'
 
 class App extends React.Component {
   render () {
     return (
       <Provider store={store}>
         <main>
-          <TruthTableConfigurator />
+          <TruthTableConfiguratorContainer />
           <div>
             <h1>Identify Product-of-Sums Form</h1>
             <h1>Identify Sum-of-Products Form</h1>

@@ -6,11 +6,11 @@ import Button from './Button'
 
 import TruthTable from './TruthTable'
 
-export default () => (
+export default ({ onRandomize }) => (
   <div className='truth-table-configurator'>
     <TruthTable />
 
-    <Button className='primary' title={'Randomize the truth table\'s outputs'}>
+    <Button className='primary' onClick={onRandomize} aria-label={'Randomize the truth table\'s outputs'}>
       <i className='fa fa-random' /> Randomize Outputs
     </Button>
 
