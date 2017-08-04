@@ -1,5 +1,4 @@
 .button {
-  background: #4B9CFB;
   padding: 10px 0;
   border-radius: 5px;
   text-align: center;
@@ -10,7 +9,7 @@
   outline: 0;
   border: 5px solid transparent;
   transition: all 100ms ease;
-  background: #777;
+  background: #404040;
 
   &.primary {
     background: #4B9CFB;
@@ -26,6 +25,6 @@
   }
 
   &:active {
-    background: #555;
+    background: #222;
   }
 }

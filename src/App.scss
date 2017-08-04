@@ -12,11 +12,16 @@ main {
   align-items: stretch;
 
   .truth-table-configurator {
-    flex-basis: 400px;
+    flex-basis: 450px;
+    max-width: 450px;
+    min-width: 300px;
     height: 100%;
     padding-right: 25px;
     margin-right: 25px;
     border-right: 1px solid #eee;
   }
+}
 
+code, pre {
+  font-family: "Source Code Pro";
 }
