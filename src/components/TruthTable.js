@@ -1,7 +1,8 @@
 import React from 'react'
 
-import TruthTable from './TruthTable.scss'
-import TruthTableData from './TruthTableData.scss'
+import './TruthTable.scss'
+import './Highlights.scss'
+import './TruthTableData.scss'
 
 import InputsContainer from './InputsContainer'
 import OutputsContainer from './OutputsContainer'
