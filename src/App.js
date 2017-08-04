@@ -16,6 +16,13 @@ class App extends React.Component {
       <Provider store={store}>
         <main>
           <TruthTableConfigurator />
+          <div>
+            <h1>Identify Product-of-Sums Form</h1>
+            <h1>Identify Sum-of-Products Form</h1>
+            <h1>Draw Karnaugh Map</h1>
+            <h1>Identify Minimal Form</h1>
+            <h1>Draw Gate Diagram</h1>
+          </div>
         </main>
       </Provider>
     )

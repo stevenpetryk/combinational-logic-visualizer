@@ -1,5 +1,4 @@
 .truth-table-data {
-  background: #f0f0f0;
   border-radius: 5px;
   position: relative;
   display: flex;
@@ -17,6 +16,15 @@
   .truth-table-bit {
     flex: 1;
     text-align: center;
+    font-weight: 400;
+  }
+
+  &.truth-table-outputs .truth-table-bit {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  header .truth-table-bit {
     font-weight: 500;
   }
 }

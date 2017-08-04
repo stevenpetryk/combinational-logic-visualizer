@@ -3,19 +3,19 @@ import React from 'react'
 import TruthTable from './TruthTable.scss'
 import TruthTableData from './TruthTableData.scss'
 
-import TruthTableInputs from './TruthTableInputs'
-import TruthTableOutputs from './TruthTableOutputs'
+import InputsContainer from './InputsContainer'
+import OutputsContainer from './OutputsContainer'
 
 export default () => (
   <div className='truth-table'>
     <div>
       <p>Inputs</p>
-      <TruthTableInputs numInputs={3} />
+      <InputsContainer />
     </div>
 
     <div>
       <p>Outputs</p>
-      <TruthTableOutputs numOutputs={2} />
+      <OutputsContainer />
     </div>
   </div>
 )

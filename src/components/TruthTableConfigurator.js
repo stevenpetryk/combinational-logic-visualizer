@@ -15,7 +15,7 @@ export default () => (
     </Button>
 
     <footer>
-      <p>Created by <a href='https://twitter.com/stevenpetryk'>@stevenpetryk</a></p>
+      <p>Created by <a href='https://twitter.com/stevenpetryk' target='_blank'>@stevenpetryk</a></p>
     </footer>
   </div>
 )

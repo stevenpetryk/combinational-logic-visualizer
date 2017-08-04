@@ -3,7 +3,7 @@ import cx from 'classNames'
 
 import './TruthTableInputs.scss'
 
-import TruthTableHeader from './TruthTableHeader'
+import InputHeaderContainer from './InputHeaderContainer'
 
 export default ({
   numInputs
@@ -12,7 +12,7 @@ export default ({
 
   return (
     <div className='truth-table-data truth-table-inputs'>
-      <TruthTableHeader />
+      <InputHeaderContainer />
 
       {inputArray.map((_, number) => (
         <div className='truth-table-row' key={number}>

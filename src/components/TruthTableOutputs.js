@@ -2,28 +2,38 @@ import React from 'react'
 import cx from 'classNames'
 
 import TruthTableHeader from './TruthTableHeader'
+import OutputHeaderContainer from './OutputHeaderContainer'
 
 import './TruthTableInputs.scss'
 
 export default ({
-  numOutputs
+  numInputs,
+  outputValues,
+  onFlip
 }) => {
-  const inputArray = Array.apply(null, Array(2 ** numOutputs)).map(() => {})
+  const inputArray = Array.apply(null, Array(2 ** numInputs)).map(() => {})
+  const outputArray = Array.apply(null, Array(outputValues.length)).map(() => {})
 
   return (
     <div className='truth-table-data truth-table-outputs'>
-      <TruthTableHeader />
+      <OutputHeaderContainer />
 
-      {inputArray.map((_, number) => (
-        <div className='truth-table-row' key={number}>
-          {number.toString(2).padStart(numOutputs, '0').split('').map((bit, index) => (
-            <div
-              className={cx('truth-table-bit', { one: bit === '1', zero: bit === '0' })}
-              key={index}
-            >
-              {bit}
-            </div>
-          ))}
+      {inputArray.map((_, outputRow) => (
+        <div className='truth-table-row' key={outputRow}>
+          {outputArray.map((_, outputColumn) => {
+            const bit = outputValues[outputColumn][outputRow] || 0
+
+            return (
+              <div
+                className={cx('truth-table-bit', { one: bit === 1, zero: bit === 0 })}
+                onClick={() => onFlip(outputColumn, outputRow)}
+                key={outputColumn}
+              >
+                {bit}
+              </div>
+
+            )
+          })}
         </div>
       ))}
     </div>

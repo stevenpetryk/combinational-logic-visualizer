@@ -4,4 +4,33 @@
   margin: 0 -5px;
   padding: 15px 5px;
   border-radius: 5px;
+  position: relative;
+
+  .truth-table-bit {
+    position: relative;
+  }
+
+  .size-adjuster {
+    position: absolute;
+    left: calc(100% - 5px);
+    top: -1px;
+    bottom: -1px;
+    display: inline-block;
+  }
+
+  .size-adjuster {
+    transition: all 0.2s ease;
+    pointer-events: none;
+    transform: translateX(-20px);
+    opacity: 0;
+    z-index: 1;
+  }
+
+  &:hover {
+    .size-adjuster {
+      pointer-events: all;
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 }
