@@ -89,5 +89,5 @@ function randomOutputs (numOutputs) {
 }
 
 function emptyArray (size) {
-  return Array.apply(null, Array(size)).map(() => 0)
+  return Array.apply(null, Array(size)).map(() => {})
 }
