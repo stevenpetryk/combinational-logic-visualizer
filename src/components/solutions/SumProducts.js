@@ -12,6 +12,7 @@ export default ({
   termsForOutputs
 }) => (
   <div className='solution product-sums'>
+    {console.log(termsForOutputs)}
     <p>
       We'll first identify the <strong>product-of-sums</strong> canonical form. This is perhaps the
       easiest of the canonical forms to remember—we simply OR all of the conditions that make our
@@ -44,7 +45,7 @@ export default ({
         {outputNames.map((outputName, index) => (
           <tr key={index}>
             <th width='10%'>{outputName}</th>
-            <td><code>{termsForOutputs[index].join('')}</code></td>
+            <td><code>{termsForOutputs[index].join(' + ')}</code></td>
           </tr>
         ))}
       </tbody>

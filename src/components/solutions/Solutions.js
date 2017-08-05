@@ -24,8 +24,8 @@ export default () => (
       </TabPanel>
 
       <TabPanel>
-        <ProductSumsContainer />
         <SumProductsContainer />
+        <ProductSumsContainer />
       </TabPanel>
 
       <TabPanel />

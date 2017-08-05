@@ -7,21 +7,18 @@ function mapStateToProps (state) {
   const numInputs = inputNames.length
 
   const termsForOutputs = state.outputs.outputValues.map((values) => {
-    values = [...values]
-    values.splice(0, 2 ** numInputs)
+    values = [...values].splice(0, 2 ** numInputs)
 
     return values
-      .map((value, index) => value === 0 && index)
+      .map((value, index) => value === 1 && index)
       .filter((v) => v !== false)
       .map((value) => {
         const bits = value.toString(2).padStart(numInputs, '0').split('').map((i) => parseInt(i, 10))
-        const term = bits.map((bit, index) => {
+        return bits.map((bit, index) => {
           let base = inputNames[index]
           if (!bit) base += "'"
           return base
-        }).join(' + ')
-
-        return `(${term})`
+        }).join('')
       })
   })
 
