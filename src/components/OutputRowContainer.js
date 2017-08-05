@@ -6,7 +6,10 @@ function mapStateToProps (state, ownProps) {
   const outputValues = state.outputs.outputValues
   const bits = outputValues.map((column) => column[ownProps.row])
 
-  return { bits }
+  return {
+    bits,
+    isOutput: true
+  }
 }
 
 function mapDispatchToProps (dispatch, ownProps) {
