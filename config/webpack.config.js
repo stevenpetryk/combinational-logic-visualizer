@@ -5,10 +5,10 @@ module.exports = {
   devServer: {
     contentBase: './dist'
   },
-  // devtool: 'inline-source-map',
+  devtool: 'inline-source-map',
   entry: [
-    // require.resolve('react-dev-utils/webpackHotDevClient'),
-    // require.resolve('react-error-overlay'),
+    require.resolve('react-dev-utils/webpackHotDevClient'),
+    require.resolve('react-error-overlay'),
     './src/app.js'
   ],
   module: {
