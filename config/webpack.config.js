@@ -34,6 +34,6 @@ module.exports = {
     path: path.resolve(__dirname, '..', 'dist')
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: 'src/200.ejs' })
+    new HtmlWebpackPlugin({ template: 'src/200.ejs', favicon: 'src/images/favicon.png' })
   ]
 }
