@@ -3,6 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 
 import Introduction from './Introduction'
 import ProductSumsContainer from './ProductSumsContainer'
+import SumProductsContainer from './SumProductsContainer'
 
 import './Solutions.scss'
 import './SolutionsHeader.scss'
@@ -24,6 +25,7 @@ export default () => (
 
       <TabPanel>
         <ProductSumsContainer />
+        <SumProductsContainer />
       </TabPanel>
 
       <TabPanel />

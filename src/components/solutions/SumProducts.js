@@ -44,7 +44,7 @@ export default ({
         {outputNames.map((outputName, index) => (
           <tr key={index}>
             <th width='10%'>{outputName}</th>
-            <td><code>{termsForOutputs[index].join(' + ')}</code></td>
+            <td><code>{termsForOutputs[index].join('')}</code></td>
           </tr>
         ))}
       </tbody>
