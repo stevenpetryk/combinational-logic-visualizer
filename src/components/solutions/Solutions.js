@@ -19,11 +19,11 @@ export default () => (
       </TabList>
 
       <TabPanel>
-        <CanonicalFormsContainer />
+        <Introduction />
       </TabPanel>
 
       <TabPanel>
-        <Introduction />
+        <CanonicalFormsContainer />
       </TabPanel>
 
       <TabPanel />
