@@ -7,6 +7,9 @@ function mapStateToProps (state) {
   const numInputs = inputNames.length
 
   const termsForOutputs = state.outputs.outputValues.map((values) => {
+    values = [...values]
+    values.splice(0, 2 ** numInputs)
+
     return values
       .map((value, index) => value === 1 && index)
       .filter((v) => v !== false)
