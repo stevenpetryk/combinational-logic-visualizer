@@ -1,6 +1,7 @@
 import find from 'lodash/find'
 
 const examples = [
+  require('./video.json'),
   require('./adder.json'),
   require('./multiplexer.json')
 ]

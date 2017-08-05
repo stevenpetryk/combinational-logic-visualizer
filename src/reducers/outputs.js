@@ -1,9 +1,10 @@
 import update from 'immutability-helper'
+import emptyArray from '../utils/emptyArray'
 
 export default (
   state = {
     outputNames: ['O1', 'O2'],
-    outputValues: [emptyArray(16), emptyArray(16)]
+    outputValues: zeroedOutputs(2)
   },
   action
 ) => {
@@ -15,7 +16,7 @@ export default (
         state,
         {
           outputNames: { $push: ['O' + (state.outputNames.length + 1)] },
-          outputValues: { $push: [emptyArray(16)] }
+          outputValues: { $push: zeroedOutputs(1) }
         }
       )
 
@@ -86,8 +87,4 @@ function randomOutputs (numOutputs) {
   return emptyArray(numOutputs).map(() => (
     emptyArray(16).map(() => Math.floor(Math.random() * 2))
   ))
-}
-
-function emptyArray (size) {
-  return Array.apply(null, Array(size)).map(() => {})
 }

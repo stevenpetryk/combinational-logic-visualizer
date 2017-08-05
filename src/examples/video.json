@@ -1,0 +1,15 @@
+{
+  "name": "Example from the video",
+  "state": {
+    "inputs": {
+      "inputNames": ["A", "B", "C"]
+    },
+    "outputs": {
+      "outputNames": ["E", "F"],
+      "outputValues": [
+        [1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ]
+    }
+  }
+}
