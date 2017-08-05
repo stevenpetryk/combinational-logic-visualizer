@@ -1,15 +1,15 @@
-.button {
+a.button {
+  background: #404040;
+  color: white !important;
   padding: 10px 0;
   border-radius: 5px;
   text-align: center;
-  color: white;
   font-size: 24px;
   cursor: pointer;
   text-decoration: none;
   outline: 0;
   border: 5px solid transparent;
   transition: all 100ms ease;
-  background: #404040;
 
   &.primary {
     background: #4B9CFB;
