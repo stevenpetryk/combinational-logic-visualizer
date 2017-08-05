@@ -12,15 +12,6 @@ export default () => (
 
     <iframe src='https://www.youtube.com/embed/0iQJsKVpSUY' frameBorder='0' allowFullScreen />
 
-    <h2>Usage</h2>
-
-    <p>
-      Customize the truth table to match your problem—you can modify the number of inputs,
-      the names of the inputs, the names of the outputs, and the output values. When you're done,
-      check out some of the tabs above for common operations performed based on the logic functions
-      defined by the truth table.
-    </p>
-
     <h2>Instructions</h2>
 
     <p>
