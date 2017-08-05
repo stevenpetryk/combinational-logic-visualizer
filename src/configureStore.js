@@ -27,6 +27,6 @@ export default () => createStore(
   wrappedReducer,
   localStore.get('state'),
   composeWithDevTools(
-    applyMiddleware(freeze)
+    applyMiddleware(freeze('inputs', 'outputs'))
   )
 )

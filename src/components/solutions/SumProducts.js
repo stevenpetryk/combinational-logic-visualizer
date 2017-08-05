@@ -4,7 +4,7 @@ import { toWords } from 'number-to-words'
 import pluralize from 'pluralize'
 import commaList from '../../utils/commaList'
 
-import Button from '../Button'
+import HighlightOnSetButton from './HighlightOnSetButton'
 
 export default ({
   numOutputs,
@@ -12,7 +12,6 @@ export default ({
   termsForOutputs
 }) => (
   <div className='solution product-sums'>
-    {console.log(termsForOutputs)}
     <p>
       We'll first identify the <strong>product-of-sums</strong> canonical form. This is perhaps the
       easiest of the canonical forms to remember—we simply OR all of the conditions that make our
@@ -32,7 +31,7 @@ export default ({
     </p>
 
     <p>
-      <Button>Highlight <code>{outputNames[0]}</code>'s on-set</Button>
+      <HighlightOnSetButton />
     </p>
 
     <p>

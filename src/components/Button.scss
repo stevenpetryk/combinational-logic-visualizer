@@ -9,13 +9,25 @@ a.button {
   text-decoration: none;
   outline: 0;
   border: 5px solid transparent;
-  transition: all 100ms ease;
+  transition: all 200ms ease;
 
   &.primary {
     background: #4B9CFB;
 
     &:active {
       background: #2B7CDB;
+    }
+  }
+
+  &.highlighter {
+    background: rgba(130, 203, 255, 0.13);
+    border: 3px solid rgba(5, 120, 202, 0.18);
+    color: black !important;
+    cursor: default;
+
+    &:hover {
+      border-color: rgba(90, 163, 225, 0.13);
+      transform: scale(1.05);
     }
   }
 

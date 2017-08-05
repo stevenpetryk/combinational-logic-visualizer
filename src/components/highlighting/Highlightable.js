@@ -1,9 +1,11 @@
 import { connect } from 'react-redux'
 
-export default (type, { isHighlighted = () => true, items = () => [] }) => Component => {
+export default ({ isHighlighted = () => true, items = () => [] }) => Component => {
   function mapStateToProps (state, ownProps) {
+    const items = state.highlighting && state.highlighting.items || []
+
     return {
-      isHighlighted: isHighlighted(state.highlighting.items, ownProps)
+      isHighlighted: isHighlighted(items, ownProps)
     }
   }
 

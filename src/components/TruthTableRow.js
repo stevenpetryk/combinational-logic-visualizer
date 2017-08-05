@@ -3,8 +3,9 @@ import cx from 'classnames'
 import find from 'lodash/find'
 
 import Highlightable from './highlighting/Highlightable'
+import TruthTableBit from './TruthTableBit'
 
-@Highlightable('row', {
+@Highlightable({
   isHighlighted (items, ownProps) {
     if (ownProps.isOutput) return false
 
@@ -17,26 +18,23 @@ import Highlightable from './highlighting/Highlightable'
 })
 export default class TruthTableRow extends React.Component {
   render () {
-    const { bits, onBitClick } = this.props
-    const { isHighlighted, highlightOn, highlightOff } = this.props
+    const { bits, onBitClick, row, isOutput } = this.props
+    const { isHighlighted } = this.props
 
     return (
       <div
         className={cx('truth-table-row', { highlighted: isHighlighted })}
-        onMouseOver={highlightOn}
-        onMouseOut={highlightOff}
       >
-        {bits.map((bit, index) => {
-          return (
-            <div
-              className='truth-table-bit'
-              onClick={() => onBitClick(index)}
-              key={index}
-            >
-              {bit}
-            </div>
-          )
-        })}
+        {bits.map((bit, index) => (
+          <TruthTableBit
+            isOutput={isOutput}
+            row={row}
+            output={index}
+            bit={bit}
+            onClick={() => onBitClick(index)}
+            key={index}
+          />
+        ))}
       </div>
     )
   }
