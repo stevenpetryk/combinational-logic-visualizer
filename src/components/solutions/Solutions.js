@@ -2,8 +2,7 @@ import React from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 
 import Introduction from './Introduction'
-import ProductSumsContainer from './ProductSumsContainer'
-import SumProductsContainer from './SumProductsContainer'
+import CanonicalFormsContainer from './canonical-forms/CanonicalFormsContainer'
 
 import './Solutions.scss'
 import './SolutionsHeader.scss'
@@ -20,12 +19,11 @@ export default () => (
       </TabList>
 
       <TabPanel>
-        <Introduction />
+        <CanonicalFormsContainer />
       </TabPanel>
 
       <TabPanel>
-        <SumProductsContainer />
-        <ProductSumsContainer />
+        <Introduction />
       </TabPanel>
 
       <TabPanel />

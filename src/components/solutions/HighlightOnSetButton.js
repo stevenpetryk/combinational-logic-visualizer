@@ -9,11 +9,11 @@ import Button from '../Button'
     const onSetRows =
       state.outputs.outputValues[0]
         .map((value, index) => value === 1 && index)
-        .filter((v) => v)
+        .filter((v) => v !== false)
 
     return {
       outputName: state.outputs.outputNames[0],
-      onSetRows: onSetRows
+      onSetRows
     }
   }
 )

@@ -24,3 +24,9 @@ main {
 code, pre {
   font-family: "Source Code Pro";
 }
+
+p code {
+  background: #eee;
+  padding: 0 3px;
+  border-radius: 2px;
+}

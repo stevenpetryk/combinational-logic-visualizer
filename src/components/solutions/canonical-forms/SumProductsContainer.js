@@ -6,7 +6,7 @@ function mapStateToProps (state) {
   const inputNames = state.inputs.inputNames
   const numInputs = inputNames.length
 
-  const termsForOutputs = state.outputs.outputValues.map((values) => {
+  const terms = state.outputs.outputValues.map((values, outputIndex) => {
     values = [...values].splice(0, 2 ** numInputs)
 
     return values
@@ -14,24 +14,20 @@ function mapStateToProps (state) {
       .filter((v) => v !== false)
       .map((value) => {
         const bits = value.toString(2).padStart(numInputs, '0').split('').map((i) => parseInt(i, 10))
-        return bits.map((bit, index) => {
+        const term = bits.map((bit, index) => {
           let base = inputNames[index]
           if (!bit) base += "'"
           return base
         }).join('')
+
+        return { text: term, row: value, output: outputIndex }
       })
   })
 
   return {
-    numOutputs: state.outputs.outputNames.length,
-    inputNames,
     outputNames: state.outputs.outputNames,
-    termsForOutputs
+    terms
   }
 }
 
-function mapDispatchToProps (dispatch) {
-  return {}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SumProducts)
+export default connect(mapStateToProps)(SumProducts)

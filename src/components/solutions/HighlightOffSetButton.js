@@ -6,23 +6,23 @@ import Button from '../Button'
 
 @connect(
   function mapStateToProps (state) {
-    const onSetRows =
+    const offSetRows =
       state.outputs.outputValues[0]
-        .map((value, index) => value === 1 && index)
-        .filter((v) => v)
+        .map((value, index) => value === 0 && index)
+        .filter((v) => v !== false)
 
     return {
       outputName: state.outputs.outputNames[0],
-      onSetRows: onSetRows
+      offSetRows
     }
   }
 )
 @Highlightable({
   items (ownProps) {
-    return ownProps.onSetRows.map((row) => ({ row, output: 0 }))
+    return ownProps.offSetRows.map((row) => ({ row, output: 0 }))
   }
 })
-export default class HighlightOnSetButton extends React.Component {
+export default class HighlightOffSetButton extends React.Component {
   render () {
     const { outputName, highlightOn, highlightOff } = this.props
 
@@ -32,7 +32,7 @@ export default class HighlightOnSetButton extends React.Component {
         onMouseOver={highlightOn}
         onMouseOut={highlightOff}
       >
-        Highlight <code>{outputName}</code>'s on-set
+        Highlight <code>{outputName}</code>'s off-set
       </Button>
     )
   }
