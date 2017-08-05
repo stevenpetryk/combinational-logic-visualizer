@@ -1,0 +1,15 @@
+{
+  "name": "2-to-1 multiplexer",
+  "key": "multiplexer",
+  "state": {
+    "inputs": {
+      "inputNames": ["S", "A", "B"]
+    },
+    "outputs": {
+      "outputNames": ["F"],
+      "outputValues": [
+        [0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+      ]
+    }
+  }
+}

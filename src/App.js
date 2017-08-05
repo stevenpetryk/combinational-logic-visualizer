@@ -6,10 +6,9 @@ import configureStore from './configureStore'
 
 import 'normalize.css'
 import './App.scss'
-import './components/solutions/Solutions.scss'
 
 import TruthTableConfiguratorContainer from './components/TruthTableConfiguratorContainer'
-import ProductSumsContainer from './components/solutions/ProductSumsContainer'
+import Solutions from './components/solutions/Solutions'
 
 const store = configureStore()
 
@@ -19,15 +18,7 @@ class App extends React.Component {
       <Provider store={store}>
         <main>
           <TruthTableConfiguratorContainer />
-          <div className='solutions'>
-            <h1>Identify Product-of-Sums Form</h1>
-            <ProductSumsContainer />
-
-            {/* <h1>Identify Sum-of-Products Form</h1>
-            <h1>Draw Karnaugh Map</h1>
-            <h1>Identify Minimal Form</h1>
-            <h1>Draw Gate Diagram</h1> */}
-          </div>
+          <Solutions />
         </main>
       </Provider>
     )

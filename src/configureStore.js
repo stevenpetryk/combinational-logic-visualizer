@@ -13,8 +13,16 @@ const rootReducer = combineReducers({
   outputs
 })
 
+const wrappedReducer = (state, action) => {
+  if (action.type === 'HYDRATE') {
+    return action.payload
+  }
+
+  return rootReducer(state, action)
+}
+
 export default () => createStore(
-  rootReducer,
+  wrappedReducer,
   localStore.get('state'),
   composeWithDevTools(
     applyMiddleware(freeze)
