@@ -1,16 +1,16 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+import path from 'path'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 
-module.exports = {
+export const paths = {
+  dist: path.resolve(__dirname, '..', 'dist')
+}
+
+export const srcEntry = './src/app.js'
+
+export default {
   devServer: {
     contentBase: './dist'
   },
-  devtool: 'inline-source-map',
-  entry: [
-    require.resolve('react-dev-utils/webpackHotDevClient'),
-    require.resolve('react-error-overlay'),
-    './src/app.js'
-  ],
   module: {
     rules: [
       {
@@ -28,10 +28,6 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       }
     ]
-  },
-  output: {
-    filename: 'bundle.[hash].js',
-    path: path.resolve(__dirname, '..', 'dist')
   },
   plugins: [
     new HtmlWebpackPlugin({ template: 'src/200.ejs', favicon: 'src/images/favicon.png' })
