@@ -30,6 +30,7 @@
     "normalize.css": "^7.0.0",
     "number-to-words": "^1.2.3",
     "pluralize": "^6.0.0",
+    "quine-mccluskey": "^0.3.0",
     "react": "^15.6.1",
     "react-dev-utils": "^3.0.2",
     "react-dnd": "^2.4.0",
