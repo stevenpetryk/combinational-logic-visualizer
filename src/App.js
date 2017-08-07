@@ -1,5 +1,4 @@
 import React from 'react'
-import { render } from 'react-dom'
 
 import { Provider } from 'react-redux'
 import configureStore from './configureStore'
@@ -12,7 +11,7 @@ import Solutions from './components/solutions/Solutions'
 
 const store = configureStore()
 
-class App extends React.Component {
+export default class App extends React.Component {
   render () {
     return (
       <Provider store={store}>
@@ -24,8 +23,3 @@ class App extends React.Component {
     )
   }
 }
-
-const appRoot = document.createElement('div')
-document.body.appendChild(appRoot)
-
-render(<App />, appRoot)

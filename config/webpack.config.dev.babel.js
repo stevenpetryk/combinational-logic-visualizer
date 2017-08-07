@@ -4,6 +4,7 @@ export default {
   ...baseConfig,
   devtool: 'inline-source-map',
   entry: [
+    'react-hot-loader/patch',
     require.resolve('react-dev-utils/webpackHotDevClient'),
     require.resolve('react-error-overlay'),
     srcEntry

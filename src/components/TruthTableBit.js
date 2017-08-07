@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import Highlightable from './highlighting/Highlightable'
 import cx from 'classnames'
 import find from 'lodash/find'

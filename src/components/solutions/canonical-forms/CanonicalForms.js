@@ -40,7 +40,7 @@ export default ({ numOutputs, numInputs, inputNames, outputNames }) => (
     </p>
 
     <p>
-      Now, for every row of <em>inputs</em> in the on-set, write a term <code>AND</code>ing together
+      Now, for row of <em>inputs</em> in the on-set, write a term <code>AND</code>ing together
       all of them. Then, <code>OR</code> them all together to achieve your function.
     </p>
 
@@ -68,7 +68,7 @@ export default ({ numOutputs, numInputs, inputNames, outputNames }) => (
     <p>
       Then, when producing our actual terms, we add an apostrophe (<code>'</code>) to the terms
       where the input is <code>0</code>. With these tactics in mind, we can find our{' '}
-      {pluralize('function', outputNames.length)}.
+      {pluralize('function', numOutputs)}.
     </p>
 
     <ProductSumsContainer />

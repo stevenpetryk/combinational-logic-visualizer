@@ -10,10 +10,6 @@ import TruthTableBit from './TruthTableBit'
     if (ownProps.isOutput) return false
 
     return find(items, (item) => item.row === ownProps.row)
-  },
-
-  items (ownProps) {
-    return [{ row: ownProps.row }]
   }
 })
 export default class TruthTableRow extends React.Component {

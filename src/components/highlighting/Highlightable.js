@@ -1,11 +1,12 @@
 import { connect } from 'react-redux'
+import get from 'lodash/get'
 
 export default ({ isHighlighted = () => true, items = () => [] }) => Component => {
   function mapStateToProps (state, ownProps) {
-    const items = state.highlighting && state.highlighting.items || []
+    const highlightedItems = get(state, 'highlighting.items', [])
 
     return {
-      isHighlighted: isHighlighted(items, ownProps)
+      isHighlighted: isHighlighted(highlightedItems, ownProps)
     }
   }
 

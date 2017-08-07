@@ -1,11 +1,12 @@
 import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin'
 
 export const paths = {
   dist: path.resolve(__dirname, '..', 'dist')
 }
 
-export const srcEntry = './src/app.js'
+export const srcEntry = './src/index.js'
 
 export default {
   devServer: {
@@ -30,6 +31,7 @@ export default {
     ]
   },
   plugins: [
+    new CaseSensitivePathsPlugin(),
     new HtmlWebpackPlugin({ template: 'src/200.ejs', favicon: 'src/images/favicon.png' })
   ]
 }
