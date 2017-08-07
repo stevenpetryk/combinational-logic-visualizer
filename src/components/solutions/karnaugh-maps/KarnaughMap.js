@@ -2,11 +2,14 @@ import React from 'react'
 import times from 'lodash/times'
 
 import './KarnaughMap.scss'
+import TruthTableBit from '../../TruthTableBit'
 
 export default ({
   numInputs,
   implicants,
-  outputValues
+  outputValues,
+  onBitClick,
+  output
 }) => {
   const dimensionsByNumInputs = {
     2: { rows: 2, columns: 2 },
@@ -32,35 +35,41 @@ export default ({
           <tbody>
             {times(dimensions.rows, () => (
               <tr>
-                {times(dimensions.columns, () => (
-                  <td><code>{outputValues[rows[counter++]]}</code></td>
-                ))}
+                {times(dimensions.columns, () => {
+                  const row = rows[counter++]
+
+                  return (
+                    <td>
+                      <TruthTableBit
+                        bit={outputValues[row]}
+                        onClick={() => onBitClick(output, row)}
+                      />
+                    </td>
+                  )
+                })}
               </tr>
             ))}
           </tbody>
         </table>
 
-        <svg>
+        <svg width='auto' height='auto'>
           {implicants.map((implicant, index) => {
-            const x = implicant.topLeft[0]
-            const y = implicant.topLeft[1]
-            const width = implicant.bottomRight[0] - implicant.topLeft[0] + 1
-            const height = implicant.bottomRight[1] - implicant.topLeft[1] + 1
-
             const scaleX = (val) => val * 100 / dimensions.columns
             const scaleY = (val) => val * 100 / dimensions.rows
 
             const colors = ['red', 'green', 'blue', 'purple', 'cyan', 'orange', 'pink']
 
-            return <rect
-              x={`${scaleX(x)}%`}
-              y={`${scaleY(y)}%`}
-              width={`${scaleX(width)}%`}
-              height={`${scaleY(height)}%`}
-              stroke={colors[index]}
-              rx={5}
-              ry={5}
-            />
+            return implicant.minterms.map((minterm, index2) => {
+              return <rect
+                x={`${scaleX(minterm.coordinates[0])}%`}
+                y={`${scaleY(minterm.coordinates[1])}%`}
+                width={`${100 / dimensions.columns}%`}
+                height={`${100 / dimensions.rows}%`}
+                key={[index, index2].join(',')}
+                fill={colors[index]}
+                style={{ opacity: 0.2 }}
+              />
+            })
           })}
         </svg>
       </div>

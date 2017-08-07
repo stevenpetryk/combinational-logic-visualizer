@@ -1,7 +1,5 @@
 import { connect } from 'react-redux'
 import { getPrimeImplicants } from 'quine-mccluskey'
-import min from 'lodash/min'
-import max from 'lodash/max'
 
 import KarnaughMap from './KarnaughMap'
 
@@ -22,29 +20,41 @@ function mapStateToProps (state, ownProps) {
   }
 
   const coordinatesForPositionForNumInputs = {
-    4: [[0, 0], [1, 0], [2, 0], [3, 0],        [0, 1], [1, 1], [2, 1], [3, 1],    [0, 2], [1, 2], [2, 2], [3, 2],     [0, 3], [1, 3], [2, 3], [3, 3]],
-    3: [[0, 0], [1, 0], [2, 0], [3, 0],        [0, 1], [1, 1], [2, 1], [3, 1]],
-    2: [[0, 0], [1, 0],        [0, 1], [1, 1]],
+    4: [[0, 0], [1, 0], [2, 0], [3, 0], [0, 1], [1, 1], [2, 1], [3, 1], [0, 2], [1, 2], [2, 2], [3, 2], [0, 3], [1, 3], [2, 3], [3, 3]],
+    3: [[0, 0], [1, 0], [2, 0], [3, 0], [0, 1], [1, 1], [2, 1], [3, 1]],
+    2: [[0, 0], [1, 0], [0, 1], [1, 1]]
   }
 
-  const implicantsWithPositions = implicants.map((implicant) => {
-    const positionMap = karnaughMapPositionsForNumInputs[numInputs]
-    const coordinateMap = coordinatesForPositionForNumInputs[numInputs]
-    const mintermPositions = implicant.minterms.map((minterm) => positionMap[minterm])
+  const positionMap = karnaughMapPositionsForNumInputs[numInputs]
+  const coordinateMap = coordinatesForPositionForNumInputs[numInputs]
+
+  const implicantsWithMintermPositions = implicants.map((implicant) => {
+    const minterms = implicant.minterms.map(
+      (minterm) => ({
+        minterm,
+        position: positionMap[minterm],
+        coordinates: coordinateMap[positionMap[minterm]]
+      })
+    )
 
     return {
-      ...implicant,
-      mintermPositions,
-      topLeft: coordinateMap[min(mintermPositions)],
-      bottomRight: coordinateMap[max(mintermPositions)]
+      minterms
     }
   })
 
   return {
     numInputs,
     outputValues,
-    implicants: implicantsWithPositions
+    implicants: implicantsWithMintermPositions
   }
 }
 
-export default connect(mapStateToProps)(KarnaughMap)
+function mapDispatchToProps (dispatch, ownProps) {
+  return {
+    onBitClick (output, row) {
+      dispatch({ type: 'FLIP_BIT', payload: { outputRow: row, outputColumn: output } })
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(KarnaughMap)
