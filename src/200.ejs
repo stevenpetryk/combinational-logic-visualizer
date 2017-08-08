@@ -1,10 +1,34 @@
+<%
+  var author = 'Steven Petryk'
+  var title = 'Combinational Logic Visualizer'
+  var description = 'Learn and see how to extract canonical forms, karnaugh maps, and gate diagrams from a truth table.'
+
+  var image = `${process.env.CNAME}/${require('./images/og-image.png')}`
+  var imageAlt = 'Image depicting a truth table, karnaugh map, and gate diagram.'
+%>
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Combinational Logic Visualizer</title>
+    <title><%= title %> by <%= author %></title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Source+Code+Pro" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+
+    <link rel="apple-touch-icon" sizes="152x152" href="<%= require('./images/touch-icon-ipad.png') %>" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= require('./images/touch-icon-iphone-retina.png') %>" />
+    <link rel="apple-touch-icon" sizes="167x167" href="<%= require('./images/touch-icon-ipad-retina.png') %>" />
+    <meta name="apple-mobile-web-app-title" content="<%= title %>" />
+
+    <meta name="author"      content="<%= author %>" />
+    <meta name="description" content="<%= description %>" />
+
+    <meta property="og:title"       content="<%= title %> by <%= author %>" />
+    <meta property="og:description" content="<%= description %>" />
+    <meta property="og:url"         content="<%= process.env.CNAME %>" />
+    <meta property="og:image"       content="<%= image %>" />
+    <meta property="og:image:alt"   content="<%= imageAlt %>" />
+    <meta property="og:type"        content="website" />
   </head>
   <body>
 

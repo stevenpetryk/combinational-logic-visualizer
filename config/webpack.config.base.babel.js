@@ -25,8 +25,12 @@ export default {
         use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
-        test: /\.(css)$/,
+        test: /\.css$/,
         use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(png|jpeg|jpg|svg)$/,
+        use: ['file-loader']
       }
     ]
   },
