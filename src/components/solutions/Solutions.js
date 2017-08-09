@@ -3,7 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 
 import Introduction from './Introduction'
 import CanonicalFormsContainer from './canonical-forms/CanonicalFormsContainer'
-import KarnaughMapContainer from './karnaugh-maps/KarnaughMapContainer'
+import KarnaughMapSolution from './karnaugh-maps/KarnaughMapSolution'
 
 import './Solutions.scss'
 import './SolutionsHeader.scss'
@@ -28,9 +28,7 @@ export default () => (
       </TabPanel>
 
       <TabPanel>
-        <KarnaughMapContainer output={0} />
-        <KarnaughMapContainer output={1} />
-        <KarnaughMapContainer output={2} />
+        <KarnaughMapSolution />
       </TabPanel>
 
       <TabPanel />

@@ -4,7 +4,8 @@ import { getPrimeImplicants } from 'quine-mccluskey'
 import KarnaughMap from './KarnaughMap'
 
 function mapStateToProps (state, ownProps) {
-  const numInputs = state.inputs.inputNames.length
+  const inputNames = state.inputs.inputNames
+  const numInputs = inputNames.length
   const outputValues = state.outputs.outputValues[ownProps.output]
 
   const minterms = [...outputValues].splice(0, 2 ** numInputs)
@@ -37,9 +38,7 @@ function mapStateToProps (state, ownProps) {
       })
     )
 
-    return {
-      minterms
-    }
+    return { minterms }
   })
 
   return {
