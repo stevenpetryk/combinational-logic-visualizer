@@ -13,7 +13,7 @@ export default ({ isHighlighted = () => true, items = () => [] }) => Component =
   function mapDispatchToProps (dispatch, ownProps) {
     return {
       highlightOn () {
-        dispatch({ type: 'SET_HIGHLIGHTED_ITEMS', payload: items(ownProps) })
+        setTimeout(() => dispatch({ type: 'SET_HIGHLIGHTED_ITEMS', payload: items(ownProps) }))
       },
 
       highlightOff () {

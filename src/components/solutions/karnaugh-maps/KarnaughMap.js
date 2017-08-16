@@ -2,7 +2,8 @@ import React from 'react'
 import times from 'lodash/times'
 
 import './KarnaughMap.scss'
-import TruthTableBit from '../../TruthTableBit'
+
+import KarnaughMapBit from './KarnaughMapBit'
 
 export default ({
   numInputs,
@@ -39,13 +40,21 @@ export default ({
                   const row = rows[counter++]
 
                   return (
-                    <td>
-                      <TruthTableBit
-                        bit={outputValues[row]}
-                        onClick={() => onBitClick(output, row)}
-                      />
-                    </td>
+                    <KarnaughMapBit
+                      output={output}
+                      bit={outputValues[row]}
+                      row={row}
+                    />
                   )
+
+                  // return (
+                  //   <td>
+                  //     <TruthTableBit
+                  //       bit={outputValues[row]}
+                  //       onClick={() => onBitClick(output, row)}
+                  //     />
+                  //   </td>
+                  // )
                 })}
               </tr>
             ))}

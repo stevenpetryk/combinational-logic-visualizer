@@ -48,12 +48,4 @@ function mapStateToProps (state, ownProps) {
   }
 }
 
-function mapDispatchToProps (dispatch, ownProps) {
-  return {
-    onBitClick (output, row) {
-      dispatch({ type: 'FLIP_BIT', payload: { outputRow: row, outputColumn: output } })
-    }
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(KarnaughMap)
+export default connect(mapStateToProps)(KarnaughMap)
