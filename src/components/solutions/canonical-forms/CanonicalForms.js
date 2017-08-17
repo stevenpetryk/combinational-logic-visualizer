@@ -25,7 +25,7 @@ export default ({ numOutputs, numInputs, inputNames, outputNames }) => (
     <p>
       The truth table we're working with has{' '}
       {toWords(numOutputs)} {pluralize('output', numOutputs)}: {commaList(outputNames)}. That means
-      we have to define {toWords(numOutputs)} logic {pluralize('function', numOutputs)} of the same
+      we have to define {toWords(numOutputs)} logic {pluralize('function', numOutputs)} of the same{' '}
       {pluralize('name', numOutputs)}.
     </p>
 

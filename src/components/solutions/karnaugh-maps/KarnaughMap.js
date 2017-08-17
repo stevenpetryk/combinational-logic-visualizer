@@ -46,15 +46,6 @@ export default ({
                       row={row}
                     />
                   )
-
-                  // return (
-                  //   <td>
-                  //     <TruthTableBit
-                  //       bit={outputValues[row]}
-                  //       onClick={() => onBitClick(output, row)}
-                  //     />
-                  //   </td>
-                  // )
                 })}
               </tr>
             ))}
