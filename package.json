@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config config/webpack.config.dev.babel.js",
-    "dist": "webpack -p --config config/webpack.config.production.babel.js --define process.env.CNAME=\"'`cat CNAME`'\"",
+    "dist": "webpack -p --config config/webpack.config.production.babel.js --define process.env.CNAME=\"'$CNAME'\"",
     "deploy": "yarn dist && surge -p dist -d `cat CNAME`",
     "start": "webpack-dev-server --config config/webpack.config.dev.babel.js --hot --inline",
     "lint": "standard"
