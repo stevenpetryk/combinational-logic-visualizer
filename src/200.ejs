@@ -22,6 +22,7 @@
 
     <meta name="author"      content="<%= author %>" />
     <meta name="description" content="<%= description %>" />
+    <meta name="canonical"   content="<%= process.env.CNAME %>" />
 
     <meta property="og:title"       content="<%= title %> by <%= author %>" />
     <meta property="og:description" content="<%= description %>" />
@@ -31,6 +32,6 @@
     <meta property="og:type"        content="website" />
   </head>
   <body>
-
+    <base href="https://combinational-logic-visualizer.netlify.com" />
   </body>
 </html>
